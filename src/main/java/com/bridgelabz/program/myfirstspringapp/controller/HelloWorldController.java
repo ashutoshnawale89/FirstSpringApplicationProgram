@@ -22,9 +22,16 @@ public class HelloWorldController {
 
 
     // UC---2
+    @RequestMapping(value = {"/query"},method = RequestMethod.GET)
+    public String sayHello(@RequestParam(value = "name")String name){
+        return "Hello"+name+"From Bridgelabz!!!";
+    }
+
+
+    //UC---3
     @RequestMapping(value = {"/query/{username}"},method = RequestMethod.GET)
     @ResponseBody
-    public String sayHello(@PathVariable(value = "username")String name){
+    public String sayHelloPath(@PathVariable(value = "username")String name){
         return "Hello  "+name+"  From Bridgelabz!!!";
     }
 }

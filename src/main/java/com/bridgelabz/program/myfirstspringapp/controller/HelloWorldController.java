@@ -44,4 +44,11 @@ public class HelloWorldController {
     public String printMsg (@RequestBody UserFullName u){
         return "Hello "+u.getFirstName()+" "+u.getLastName()+ " from BridgeLabs.";
     }
+
+    @Autowired
+    UserName userName;
+    @RequestMapping(value = "/put",method = RequestMethod.PUT)
+    public String putMethod(@RequestBody UserFullName user){
+        return userName.updateItem(user);
+    }
 }

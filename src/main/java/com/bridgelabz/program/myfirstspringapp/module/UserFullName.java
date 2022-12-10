@@ -4,6 +4,11 @@ public class UserFullName {
     public String firstName;
     public String lastName;
 
+    public UserFullName(String firstName, String lastName) {
+        this.firstName=firstName;
+        this.lastName=lastName;
+    }
+
     public String getFirstName() {
         return firstName;
     }

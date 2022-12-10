@@ -1,9 +1,12 @@
 package com.bridgelabz.program.myfirstspringapp.controller;
 
+import com.bridgelabz.program.myfirstspringapp.module.UserFullName;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 public class HelloWorldController {
 
 
@@ -33,5 +36,12 @@ public class HelloWorldController {
     @ResponseBody
     public String sayHelloPath(@PathVariable(value = "username")String name){
         return "Hello  "+name+"  From Bridgelabz!!!";
+    }
+
+    //UC---4
+
+    @PostMapping ("/post")
+    public String printMsg (@RequestBody UserFullName u){
+        return "Hello "+u.getFirstName()+" "+u.getLastName()+ " from BridgeLabs.";
     }
 }
